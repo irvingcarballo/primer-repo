@@ -1,0 +1,4 @@
+Herramientas de QA
+-Git
+-Excel
+-Azure
