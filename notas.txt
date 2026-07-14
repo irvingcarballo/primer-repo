@@ -1,0 +1,4 @@
+Día 14/07/26 - Git - GitHub
+-Uso de git clone para clonar repositorios en Github
+- usar git pull para bajar cambios de la rama y git push para subirla
+- Usar el .gitignore para poner archivos que git va a ignorar al subirse.
