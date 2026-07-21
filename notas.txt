@@ -5,5 +5,3 @@ Día 14/07/26 - Git - GitHub
 -He creado una nueva linea en un clone
 -Nueva modificación
 -Otra
-- Modificación
-ASIBduawduowa
