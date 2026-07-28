@@ -1,12 +1,19 @@
 Feature: Funcionalidad de la sección de busqueda en Amazon
 
-  Scenario: Búsqueda exitosa de un producto existente
+  @busqueda_productos
+  Scenario Outline: Búsqueda de productos con diferentes criterios y casos de borde
     Given el usuario está en la página principal de Amazon (https://www.amazon.com/)
     And el usuario ha iniciado sesión con credenciales válidas
-    When el usuario ingresa "COmputadora HP" en la barra de búsqueda
+    When el usuario ingresa "<termino_busqueda>" en la barra de búsqueda
     And hace clic en el botón de búsqueda
-    Then se muestran resultados relacionados con "Computadora HP"
-    And el primer resultado contiene el nombre del producto "Computadora HP"
+    Then el sistema muestra la respuesta esperada "<resultado_esperado>"
+
+    Examples:
+      | termino_busqueda    | resultado_esperado                                       |
+      | Computadora HP      | Muestra productos relacionados con "Computadora HP"      |
+      | Laptop Dell i7 16GB | Muestra productos específicos para "Laptop Dell i7 16GB" |
+      |                     | Permanece en la página actual o muestra alerta de texto  |
+      | @#$%&*!             | Muestra mensaje de "No se encontraron resultados"        |
 
   Scenario: Búsqueda fallida de un producto inexistente
     Given el usuario está en la página principal de Amazon (https://www.amazon.com/)
